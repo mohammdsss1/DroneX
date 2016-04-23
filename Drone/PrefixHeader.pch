@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  Drone
+//
+//  Created by Mohammad Salah on 4/19/16.
+//  Copyright © 2016 Hammoda. All rights reserved.
+//
+
+#ifndef PrefixHeader_h
+#define PrefixHeader_h
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <PromiseKit/PromiseKit.h>
+#import "Func.h"
+#import "FAAlert.h"
+#import "FAConstants.h"
+#import "FAConnectionManager.h"
+#import "AppDelegate.h"
+
+#endif /* PrefixHeader_h */
