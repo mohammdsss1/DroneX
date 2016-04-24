@@ -21,13 +21,6 @@
 /**
  * @author Mohammad Salah
  * @param service All needed data to initiate the request
- * @return Starts a POST request, and return PMKPromise as a block completion
- */
--(AnyPromise*)postWithService:(FAService*)service;
-
-/**
- * @author Mohammad Salah
- * @param service All needed data to initiate the request
  * @return Starts a GET request, and return PMKPromise as a block completion
  */
 -(AnyPromise*)getWithService:(FAService*)service;

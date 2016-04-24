@@ -10,11 +10,6 @@
 
 @implementation FAAPI
 
--(AnyPromise*)createPromiseWithService:(FAService*)service
-{
-    return [[FAConnectionManager shared] postWithService:service];
-}
-
 //#ifdef CustomerApp
 -(AnyPromise*)promiseWithGetService:(FAService*)service
 {
