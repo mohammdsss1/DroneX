@@ -68,13 +68,14 @@
 
 +(NSValueTransformer *)formatNumbersJSONTransformer
 {
-    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *number, BOOL *success, NSError *__autoreleasing *error)
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSNumber *number, BOOL *success, NSError *__autoreleasing *error)
             {
                 if([number isEqual:[NSNull null]] || number == nil)
                     return nil;
                 
                 double fNumber = number.doubleValue;
-                return [NSString stringWithFormat:@"%.2f", fNumber];
+                NSString *stNum = [NSString stringWithFormat:@"%.2f", fNumber];
+                return @(stNum.doubleValue);
             } reverseBlock:^id(NSString *number, BOOL *success, NSError *__autoreleasing *error) {
                 return number;
             }];

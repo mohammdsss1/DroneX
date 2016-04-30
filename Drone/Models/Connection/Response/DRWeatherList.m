@@ -158,6 +158,16 @@
             }];
 }
 
++(NSValueTransformer *)grnd_levelJSONTransformer
+{
+    return [FAResponse formatNumbersJSONTransformer];
+}
+
++(NSValueTransformer *)sea_levelJSONTransformer
+{
+    return [FAResponse formatNumbersJSONTransformer];
+}
+
 @end
 
 @interface DRWind()

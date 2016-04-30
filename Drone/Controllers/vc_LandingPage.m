@@ -29,6 +29,13 @@
     self.pickerManager.arrObjects = @[@"DJI Phantom 4", @"DJI Phantom 3", @"Yuneec Q500 4K", @"3DR Solo"];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self showLoading];
+}
+
 -(void)setupAndShowPicker
 {
     if(self.pickerManager.superview)return;
@@ -49,25 +56,30 @@
     [self.pickerManager applyAnimation:YES];
 }
 
+-(void)showLoading
+{
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    MRProgressOverlayView *overlayView =[MRProgressOverlayView showOverlayAddedTo:keyWindow animated:YES];
+    overlayView.titleLabelText = @"Getting Ready...";
+    overlayView.tintColor = UIColorFromRGB(0xe91e63);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        overlayView.titleLabelText = @"Done!";
+        overlayView.mode = MRProgressOverlayViewModeCheckmark;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
+                       {
+                           [overlayView dismiss:YES completion:^{
+                               [[AppDelegate appDelegate].initial openMainMap];
+                           }];
+                       });
+    });
+}
+
 -(IBAction)tapOnMainMap:(id)sender
 {
     if(self.tfIP.text.length == 0 || self.tfDroneName.text.length == 0)return;
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    MRProgressOverlayView *overlayView =[MRProgressOverlayView showOverlayAddedTo:keyWindow animated:YES];
-    overlayView.titleLabelText = @"Connecting...";
-    overlayView.tintColor = UIColorFromRGB(0xe91e63);
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        overlayView.titleLabelText = @"Connected!";
-        overlayView.mode = MRProgressOverlayViewModeCheckmark;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
-        {
-            [overlayView dismiss:YES completion:^{
-                [[AppDelegate appDelegate].initial openMainMap];
-            }];
-        });
-    });
+    [self showLoading];
 }
 
 #pragma mark - WHPickerViewManagerDelegate

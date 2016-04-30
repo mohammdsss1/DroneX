@@ -61,7 +61,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="cCa-hj-zXo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11O-Gg-Yxy">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11O-Gg-Yxy">
                                 <rect key="frame" x="216" y="515" width="168" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="0.8038701923076923" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -76,7 +76,7 @@
                                     <action selector="tapOnMainMap:" destination="zf9-we-j7D" eventType="touchUpInside" id="7Xk-Ju-xAR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SELECT DRONE TYPE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trd-5w-ITF">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SELECT DRONE TYPE" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trd-5w-ITF">
                                 <rect key="frame" x="20" y="120" width="560" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.80108173076923073" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -85,7 +85,7 @@
                                     <outlet property="delegate" destination="zf9-we-j7D" id="zFH-Co-fuI"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DRONE IP: 192.168.1.1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOC-Gx-xfW">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DRONE IP: 192.168.1.1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOC-Gx-xfW">
                                 <rect key="frame" x="20" y="158" width="560" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.8010817308" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -418,8 +418,8 @@
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="VeA-kQ-IUk"/>
                                             <exclude reference="7yJ-rc-Blh"/>
+                                            <exclude reference="VeA-kQ-IUk"/>
                                         </mask>
                                     </variation>
                                 </label>
@@ -576,7 +576,7 @@
                                         <constraint firstAttribute="width" constant="30" id="YIS-6Q-sGq"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-La-CEh">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-La-CEh">
                                     <rect key="frame" x="30" y="5" width="20" height="20"/>
                                     <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="17"/>
                                     <color key="textColor" red="0.9137254901960784" green="0.11764705882352941" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>

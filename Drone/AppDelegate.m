@@ -33,7 +33,7 @@ static AppDelegate *appDelegate = nil;
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startConnectionCheck:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
     
-    sleep(4);
+//    sleep(4);
     
     return YES;
 }
